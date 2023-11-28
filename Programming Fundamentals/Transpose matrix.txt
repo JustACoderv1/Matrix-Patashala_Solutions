@@ -1,0 +1,23 @@
+
+for t in range(int(input())):
+    n,m = map(int, input().split())
+    matrix = [[0 for j in range(m)] for i in range(n)]
+    for i in range(len(matrix)):
+        ln = list(map(int, input().split()))
+        for j in range(len(matrix[i])):
+            matrix[i][j] = ln[j]
+    #transpose
+    transpose = [[0 for j in range(n)] for i in range(m)]
+    for i in range(len(transpose)):
+        for j in range(len(transpose[i])):
+            if i!=j:
+                transpose[i][j] = matrix[j][i]
+            else:
+                transpose[i][j] = matrix[i][j]
+    #display transpose
+    for i in range(len(transpose)):
+        for j in range(len(transpose[i])):
+            print(transpose[i][j], end=" ")
+        print()
+    print()
+    
