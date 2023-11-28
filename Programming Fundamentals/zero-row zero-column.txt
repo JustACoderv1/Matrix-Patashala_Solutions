@@ -1,0 +1,24 @@
+for t in range(int(input())):
+    n,m = map(int, input().split())
+    matrix = [[0 for j in range(m)] for i in range(n)]
+    zeroes = []
+    #insert 
+    for i in range(len(matrix)):
+        ln = list(map(int, input().split()))
+        for j in range(len(matrix[i])):
+            matrix[i][j] = ln[j]
+            if matrix[i][j] == 0:
+                zeroes.extend([i,j])
+    #convert
+    for x in zeroes[0::2]:
+        for i in range(m):
+            matrix[x][i] = 0
+    for y in zeroes[1::2]:
+        for j in range(n):
+            matrix[j][y] = 0 
+    #print
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            print(matrix[i][j], end = " ")
+        print()
+    print()
