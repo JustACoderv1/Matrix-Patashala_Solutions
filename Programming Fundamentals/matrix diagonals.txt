@@ -1,0 +1,22 @@
+for t in range(int(input())):
+    n = int(input())
+    matrix = [[0 for j in range(n)] for i in range(n)]
+    for i in range(n):
+        matrix[i] = list(map(int, input().split()))
+    sum1 = 0
+    sum2 = 0
+    for i in range(n):
+        a = matrix[i][i]
+        b = matrix[i][n-1-i]
+        if a%2 != 0:
+            sum1 += a      
+        if b%2 != 0:
+            sum2 += b
+    res = sum1 - sum2
+    if res >= 0:
+        print(res)
+    else:
+        print(abs(res))
+        
+    
+    
