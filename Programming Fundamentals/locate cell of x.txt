@@ -1,0 +1,25 @@
+"""note : has correct output but showing runtime error while submitting"""
+for t in range(int(input())):
+    row, col, num = map(int, input().split())
+    row_matrix = [[0 for j in range(col)] for i in range(row)]
+    col_matrix = [[0 for j in range(col)] for i in range(row)]
+    #fill rows
+    row_fill = 1
+    for i in range(row):
+        for j in range(col):
+            row_matrix[i][j] = row_fill
+            row_fill += 1
+    #fill cols
+    col_fill = 1
+    for i in range(col):
+        for j in range(row):
+            col_matrix[j][i] = col_fill
+            col_fill += 1
+    
+    #find element in column matrix
+    for i in range(col):
+        for j in range(row):
+            if num == col_matrix[j][i]:
+                print(row_matrix[j][i])
+                break
+            
