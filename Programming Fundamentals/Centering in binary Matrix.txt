@@ -1,0 +1,28 @@
+for t in range(int(input())):
+    n = int(input())
+    matrix = [[0 for j in range(n)] for i in range(n)]
+    for i in range(n):
+        matrix[i] = list(map(int, input().split()))
+    for i in range(n):
+        for j in range(n):
+            if matrix[i][j] == 1:
+                k = i
+                l = j
+                break
+    res = int(n/2)
+    count = 0
+    while(k != res):
+        if k < res:
+            k +=1
+            count += 1
+        else:
+            k -=1
+            count += 1
+    while(l != res):
+        if l < res:
+            l +=1
+            count += 1
+        else:
+            l -=1
+            count += 1
+    print(count)
